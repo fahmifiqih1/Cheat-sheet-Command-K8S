@@ -13,11 +13,11 @@ $ kubectl cluster-info
 ```
 $ kubectl config view
 ```
-3. Get The Configuration all cluster on Desktop
+4. Get The Configuration all cluster on Desktop
 ```
 $ kubectl config view
 ```
-4. Get Information about a nodes
+5. Get Information about a nodes
 ```
 $ kubectl get node *or* no
 $ kubectl describe node <NameNode>
@@ -40,37 +40,52 @@ $ kubectl describe ns
 ```
 
 ## Pods introspaction
-1. Get List the current pods
+1. Create pod
+```
+$ kubectl apply -f pod.yaml
+$ kubectl create -f pod.yaml
+```
+2. Get List the current pods
 ```
 $ kubectl get pod or po
 ```
-2. Get List the current pods complete information
+3. Get List the current pods complete information
 ```
 $ kubectl get po -o wide 
 ```
-3. Get Infomation by label
+4. Get Infomation by label
 ```
 $ kubectl get po env=development 
 $ kubectl get po --show-labels
-```
-4. Export configuration pods
-```
-$ kubectl get po <PodName> -o yaml namepods.yaml
 ```
 5. Export configuration pods
 ```
 $ kubectl get po <PodName> -o yaml namepods.yaml
 ```
-6. Get all pods on Namespaces
+6. Export configuration pods
+```
+$ kubectl get po <PodName> -o yaml namepods.yaml
+```
+7. Get all pods on Namespaces
 ```
 $ kubectl get po --all-namespaces
 ```
-7. Forward traffic from pod
+8. Forward traffic from pod
 ```
 $ kubectl port-forward <NamePod> <PodPort>:<Port>
 ```
 
-
+## Deployments introspaction
+1. Create deployments
+```
+$ kubectl apply -f deployment.yaml
+$ kubectl create -f deployment.yaml
+```
+2. Create deployments
+```
+$ kubectl apply -f deployment.yaml
+$ kubectl create -f deployment.yaml
+```
 
 
 

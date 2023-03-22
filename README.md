@@ -81,10 +81,87 @@ $ kubectl port-forward <NamePod> <PodPort>:<Port>
 $ kubectl apply -f deployment.yaml
 $ kubectl create -f deployment.yaml
 ```
-2. Create deployments
+2. Get list information deployments
 ```
-$ kubectl apply -f deployment.yaml
-$ kubectl create -f deployment.yaml
+$ kubectl get deployment or deploy
+$ kubectl get deploy -o wide
+```
+3. Get more information about deployment
+```
+$ kubectl describe deploy <NameDeployment>
+```
+4. Get list deployment in all namespaces
+```
+$ kubectl get deploy --all-namespaces
+```
+5. Edit and update the definition of one or more deployments on the server
+```
+$ kubectl edit deployment <NameDeployment>
+```
+6. Rollback to the previous deployment
+```
+$ kubectl rollout undo deployment/<NameDeployment>
+```
+7. Perform a replace deployment — Force replace, delete and then re-create the resource.
+```
+$ kubectl replace --force -f deployment.yaml
+```
+8. Restart a deployment
+```
+$ kubectl rollout restart deployment/<NameDeployment>
+```
+9. Restart deployments with the app=nginx label
+```
+$ kubectl rollout restart deployment --selector=app=nginx
+```
+
+Available Commands rollout:
+  history       View rollout history
+  pause         Mark the provided resource as paused
+  restart       Restart a resource
+  resume        Resume a paused resource
+  status        Show the status of the rollout
+  undo          Undo a previous rollout
+  
+
+## Services introspaction
+1. Create service
+```
+$ kubectl apply -f service.yaml
+```
+2. Get more information about deployment
+```
+$ kubectl get service or svc
+$ kubectl describe svc <NameSvc>
+```
+3. Get infomation more wide svc
+```
+$ kubectl get svc -o wide
+```
+4. Port forward k8s to local
+```
+$ kubectl port-forward <NameSvc> <PortSvc>:<Port>
+```
+
+## DaemonSets introspaction
+1. Create daemonset
+```
+$ kubectl apply -f deamonset.yaml
+$ kubectl create -f deamonset.yaml
+```
+2. Get information
+```
+$ kubectl get daemonset or ds
+$ kubectl desrcibe ds <NameDaemonset>
+$ kubectl get ds <NameDaemonset> -o yaml
+```
+3. Check the rollout status of a daemonset
+```
+$ kubectl rollout status daemonset/<NameDaemonset>
+```
+4. Check the rollout status of a daemonset
+```
+$ kubectl delete daemonset <NameDaemonset>
 ```
 
 

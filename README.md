@@ -110,18 +110,21 @@ $ kubectl replace --force -f deployment.yaml
 ```
 $ kubectl rollout restart deployment/<NameDeployment>
 ```
-9. Restart deployments with the app=nginx label
+9. Scale a deployemnt to 3 pods
+```
+$ kubectl scale --replicas=3 deployment/<NameDeployment> 
+```
+10. Restart deployments with the app=nginx label
 ```
 $ kubectl rollout restart deployment --selector=app=nginx
 ```
-
 Available Commands rollout:
-  history       View rollout history
-  pause         Mark the provided resource as paused
-  restart       Restart a resource
-  resume        Resume a paused resource
-  status        Show the status of the rollout
-  undo          Undo a previous rollout
+  history :      View rollout history
+  pause   :      Mark the provided resource as paused
+  restart :      Restart a resource
+  resume  :      Resume a paused resource
+  status  :      Show the status of the rollout
+  undo    :      Undo a previous rollout
   
 
 ## Services introspaction
@@ -194,14 +197,71 @@ $ kubectl logs --previous <NamePod>
 $ kubectl logs [-f] [-p] (POD | TYPE/NAME) [-c CONTAINER] [options]
 ```
 
-## Logs introspaction
-1. Return snapshot logs from pod with only one container
+## ServiceAccount
+1.  List service accounts.
 ```
-$ kubectl logs <NamePod>
+$ kubectl get serviceaccounts or sa
+```
+2.  Get more information in yaml
+```
+$ kubectl get sa -a yaml
+```
+3.  Display the detailed state of one or more service accounts
+```
+$ kubectl describe serviceaccounts <NameServiceAccount>
+```
+4.  Display the detailed state of one or more service accounts
+```
+$ kubectl delete serviceaccounts <NameServiceAccount>
 ```
 
+## ConfigMaps
+1.  Get List configmap
+```
+$ kubectl get configmap or cm
+```
+2.  Display more information about configmap
+```
+$ kubectl describe cm <NameConfig>
+```
+3.  Display the detailed in output yaml
+```
+$ kubectl get cm <NameConfig> -o yaml
+```
 
+## Secreets
+1.  Get List secrets 
+```
+$ kubectl get secrets
+```
+2.  Display more information about configmap
+```
+$ kubectl describe secrets <NameSecret>
+```
+3.  Display the detailed in output yaml
+```
+$ kubectl get secrets <NameSecrets> -o yaml
+```
 
+## Ingress
+1. Get List ingresses
+```
+$ kubectl get ingress or ing
+```
+2. Display more information
+```
+$ kubectl describe ing <NameIngress>
+$ kubectl get ing -o wide
+$ kubectl get ing --show-labels
+```
+3. Display the detailed in output yaml
+```
+$ kubectl get ing <NameIngress> -o yaml
+```
+4. Get list all namespaces
+```
+$ kubectl get ing --all-namespaces
+```
 
 
 

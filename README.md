@@ -164,6 +164,54 @@ $ kubectl rollout status daemonset/<NameDaemonset>
 $ kubectl delete daemonset <NameDaemonset>
 ```
 
+## Logs introspaction
+1. Return snapshot logs from pod with only one container
+```
+$ kubectl logs <NamePod>
+```
+2. Return snapshot logs from pod with only one container
+```
+$ kubectl logs <NamePod> --all-containers=true
+```
+3. Print the logs for the last 6 hours for a pod
+```
+$ kubectl logs --since=6h <NamePod>
+```
+4. Get the most recent 50 lines of logs
+```
+$ kubectl logs --tail=50 <NamePod>
+```
+5. Output the logs for a pod into a file named ‘pod.log’
+```
+$ kubectl logs <NamePod> pod.log
+```
+6. View the logs for a previously failed pod
+```
+$ kubectl logs --previous <NamePod>
+```
+7. Usage kubectl logs -h
+```
+$ kubectl logs [-f] [-p] (POD | TYPE/NAME) [-c CONTAINER] [options]
+```
+
+## Logs introspaction
+1. Return snapshot logs from pod with only one container
+```
+$ kubectl logs <NamePod>
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,4 +1,4 @@
-#:wrench: Cheat Sheet Kubernetes
+# :wrench:Cheat Sheet Kubernetes
 
 ## Cluster introspaction
 1. Get Version Information Client Version and Server Version.

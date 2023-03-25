@@ -19,7 +19,7 @@ $ kubectl config view
 ```
 5. Get Information about a nodes
 ```
-$ kubectl get node *or* no
+$ kubectl get node or no
 $ kubectl describe node <NameNode>
 $ kubectl node -o wide
 $ kubectl get node -o yaml
